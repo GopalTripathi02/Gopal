@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let count1 = parseInt(prompt("Enter the customer for the first hour"));
+    let count2 = parseInt(prompt("Enter the customer for the second hour"));
+    let count3 = parseInt(prompt("Enter the customer for the Third hour"));
+    let count4 = parseInt(prompt("Enter the customer for the fourth hour"));
+    const NUM_HOURS = 4 ;
+    let BR = "<br />";
+    let totalCust = (count1+count2+count3+count4);
+    let avgCust = totalCust / NUM_HOURS ;
+
+    document.write(`Sunshine Books Customer Statstics Program ${BR}`);
+    document.write(`Total Number of Customers: ${totalCust} ${BR}`);
+    document.write(`Average Number of Customers Per Hour: ${avgCust} ${BR}`);
+    document.write(`ThankYou! for using this program. Good-bye!`);
+
+</script>
+    
+</body>
+</html>
