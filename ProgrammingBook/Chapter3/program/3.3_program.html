@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    
+    <title>Javascript Maths Program</title>
+</head>
+<body>
+<script>
+    function aboutProgram() {
+        document.write(`Javascript Math Program: </br>`);
+        document.write(`This Program asks for the radius `);
+        document.write(`of a circle and computes the the diamter, `);
+        document.write(`circumference , and area. </p>`);
+
+
+    }
+
+    function thankYou() {
+        document.write(`Thankyou For using this program !! `)
+
+    }
+    let radius = parseFloat(prompt("Input the radius of a circle : ",));
+
+    
+    let diameter = (2*radius);
+
+    let circumF = (Math.PI*diameter); 
+
+    let area = (Math.PI*radius*radius);
+
+    aboutProgram();
+
+    document.write(`Diameter : ${diameter.toFixed(2)} </br>`)
+    document.write(`Circumference : ${circumF.toFixed(2)} </br>`)
+    document.write(`Area : ${area.toFixed(2)} </p>`)
+
+    thankYou();
+
+</script>
+    
+</body>
+</html>
