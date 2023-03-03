@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    
+    <title>Account Program with extra methods</title>
+</head>
+<body>
+<script>
+    class Account{
+        constructor(type,num,lname,fname,bal){
+            this.acctType = type,
+            this.acctNumber = num,
+            this.lastName = lname,
+            this.firstName = fname,
+            this.acctBalance = bal
+            
+
+        }
+    // Method for deposit
+    deposit(amt){
+        this.acctBalance = (this.acctBalance + amt);
+        document.write(`The new balance is: $${this.acctBalance} ${"</br>"}`);
+    }
+
+    // Method for withdraw
+    withdraw(amt){
+        this.acctBalance = (this.acctBalance - amt);
+        document.write(`The new balance is: $${this.acctBalance} ${"</br>"}`);
+
+    }
+
+    // Method for ChangeName
+    changeName(lname,fname){
+        this.lastName = lname,
+        this.firstName = fname
+        document.write(`The name has been changed to ${this.firstName} ${this.lastName} ${"</br>"}`);
+    }
+
+    // Method for inquiring 
+    inquire(){
+        return this.acctBalance;
+        document.write(`Your Account balance is ${this.acctBalance} ${"</br>"}`);
+    }
+
+    // Method For displaying all account related information
+    displayInfo(){
+        document.write(`Account type : ${this.acctType} ${"</br>"}`);
+        document.write(`Account Number : ${this.acctNumber} ${"</br>"}`);
+        document.write(`Account Holder FirstName : ${this.firstName} ${"</br>"}`);
+        document.write(`Account Holder lastName : ${this.lastName} ${"</br>"}`);
+        document.write(`Account Balance : ${this.acctBalance} ${"</br>"}`);
+    }
+    aboutProgram(){
+        document.write(`This Program creates an Account ${"</br>"}`);
+        document.write(`It also modifies the account ${"</br>"} </p>`);
+    } 
+    thankYou(){
+        document.write(`Thank You !!! </br>`)
+    }
+    }
+
+    let mySavingAcct = new Account("saving",39821092399,"tripathi","gopal",50000);
+    mySavingAcct.aboutProgram();
+    mySavingAcct.deposit(5000);
+    mySavingAcct.withdraw(10000);
+    mySavingAcct.inquire();
+    mySavingAcct.displayInfo();
+    mySavingAcct.thankYou();
+    mySavingAcct.changeName("Tripathi","Gopal");
+    document.write(mySavingAcct);
+
+
+    
+</script> 
+    
+</body>
+</html>
