@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+   
+    <title>Program For Creating Account </title>
+</head>
+<body>
+<script>
+    // This program is creating a class named Account and creating properties and methods inside it.
+
+    let acctType;
+    let acctNumber;
+    let lastName;
+    let firstName;
+    let acctBal;
+
+
+    class Account{
+        constructor(type,num,lname,fname,bal){
+
+        this.acctType = type,
+        this.acctNumber = num,
+        this.lastName = lname,
+        this.firstName = fname,
+        this.acctBal =  bal
+
+
+        }
+        
+
+        accountProg(){
+            console.log("Account Program");
+            console.log("</br>")
+            console.log("This program creates an Account");
+        }
+
+        thankyou(){
+            console.log("Thank You !!!!");
+        }
+
+
+    }
+        let mySavingAcct = new Account("saving",3245643,"tripathi","Gopal",32454000);
+        mySavingAcct.accountProg();
+        console.log(mySavingAcct);
+        mySavingAcct.thankyou();
+</script>
+    
+</body>
+</html>
