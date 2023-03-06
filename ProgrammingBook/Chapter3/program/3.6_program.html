@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+
+
+    <title>Creates a Form</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+
+    <!--set body color to green , name the form-->
+
+
+    <body bgcolor="skyblue">
+        <form name="ColorandText" action="">
+
+            <!-- Three Radio Buttons to set the color-->
+
+            <input id="b1" type="radio" name="colors" value="red" onclick="setColor(this.value)" /> Red<br />
+            <input id="b2" type="radio" name="colors" value="purple" onclick="setColor(this.value)" />
+            Purple<br />
+            <input id="b3" type="radio" name="colors" value="yellow" onclick="setColor(this.value)" /> Yellow<p>
+
+                <!--  A Button to change the color -->
+
+                <input id="button" onclick="changeColor()" type="button" name="change" value="Change color" /> </p>
+
+            <!-- text boxes for first and last Name -->
+
+            <input class="t1 success" type="text" name="firstName" value="First Name" size="40">
+            <p>
+                <input class="t2 danger" type="text" name="lastName" value="last Name" size="40" />
+                <p>
+
+                    <!-- text box and button to display fullName-->
+
+                    <input class="t3 default" type="text" name="fullName" readonly="true" size="40">
+                    <p>
+                        <input id="button2" type="button" name="displayName" value="Display Name" /> <br />
+
+        </form>
+        <script>
+            // created function and concatenates the first name and last name by accessing their value from
+            // documents and set it to display name box using click event on button
+            function DisplayName() {
+                let firstName = document.ColorandText.firstName.value;
+                let lastName = document.ColorandText.lastName.value;
+                document.ColorandText.fullName.value = (`${firstName} ${lastName}`);
+                console.log(document.ColorandText.fullName.value);
+            }
+            let displayName = document.getElementById("button2");
+            displayName.addEventListener(`click`, DisplayName);
+
+            // taking input from radio buttons for setting the color 
+            // when user will tryin changing the color it will set in next color variable 
+            // let nextColor;
+            function setColor(newColor) {
+
+                nextColor = newColor;
+
+            }
+
+            function changeColor() {
+
+                document.body.bgColor = nextColor;
+
+            }
+
+            // let radio1 = document.getElementById("b1");
+            // let radio2 = document.getElementById("b2");
+            // let radio3 = document.getElementById("b3");
+
+            // radio1.addEventListener(`click`,setColor(document.ColorandText.colors.value));
+            // radio2.addEventListener(`click`,setColor(document.ColorandText.colors.value));
+            // radio3.addEventListener(`click`,setColor(document.ColorandText.colors.value));
+
+            // let chngColor = document.getElementById("button");
+            // chngColor.addEventListener(`click`,changeColor);
+        </script>
+    </body>
+
+</html>

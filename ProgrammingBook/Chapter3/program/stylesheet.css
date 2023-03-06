@@ -1,0 +1,96 @@
+
+
+#button{
+    padding: 10px 15px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #180303;
+    background-color: #3a656b;
+    border: 10px;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    
+}
+#button:hover {background-color: #3e8e41}
+
+#button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.t1{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.success {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+.success:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+.t2{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.danger {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+.danger:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+.t3{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.default {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+.default:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+#button2{
+    padding: 10px 15px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #180303;
+    background-color: #3a656b;
+    border: 10px;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+#button2:hover {background-color: #3e8e41}
+
+#button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
