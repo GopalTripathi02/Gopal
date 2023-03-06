@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+
+    <title>Music Order Form</title>
+</head>
+<body bgColor="skyblue">
+<h2>Music Delivered Order Form</h2>
+<form name="OrderForm" action="" >
+
+<!-- Creating drop down list for song items-->
+<strong>Select your song : </strong> <br><br>
+<select name="Songchoice" id="songs">
+    <option value="meri jaan(king)">King : Maan Meri Jaan</option>
+    <option value="alone(Alan Walker)">Alan Walker : Alone</option>
+    <option value="attention(charlie puth)">Charlie Puth : Attention</option>
+    <option value="Cheap Thrills(Sia)">Sia : Cheap Thrills</option>
+    </option>
+</select> </p>
+
+
+<!-- Creating radio buttons for credit card types-->
+<strong>Select Your Credit Card Type</strong><p>
+
+<input type="radio" name="creditcard" value="MasterCard" onclick="setType(this.value)" /> MasterCard <br>
+
+<input type="radio" name="creditcard" value="Visa" onclick="setType(this.value)"/> Visa <br>
+
+<input type="radio" name="creditcard" value="Discover" onclick="setType(this.value)"/> Discover <br>
+
+<input type="radio" name="creditcard" value="American" onclick="setType(this.value)"/> American <p>
+
+<!-- Creating text boxes for user details -->
+
+<strong>Enter your Name and e-mail address :</strong> </p>
+<input type="text" class="text" id="firstName" name="firstName" value="First Name" size="40"><p>
+<input type="text" class="text" id="lastName" name="lastName" value="last Name" size="40"><p>
+<input type="text" class="text" id="email" name="email" value="e-mail address" size="40"><p>
+
+<!--Create display button and multiline text-->
+
+<input type="button" onclick="displayOrder()" name="displayButton" value="Display Order" /> </p>
+<textarea name="fullOrder" readonly="true"  id="" cols="50" rows="8"></textarea>
+
+
+</form>
+<script>
+    let songTitle;
+    let creditCardType;
+    let SONG_PRICE = 0.99;
+    let NL = "\n";
+
+    function setType(ccType) {
+        creditCardType = ccType;
+    }
+
+    function displayOrder() {
+        let firstName = document.getElementById("firstName").value ;
+        console.log(firstName);
+        let lastName = document.getElementById("lastName").value;
+        console.log(lastName);
+        let email = document.getElementById("email").value;
+        console.log(email);
+        let songTitle = document.getElementById("songs").value;
+        console.log(songTitle);
+        let fulldetail= document.OrderForm.fullOrder.value = 
+            `HERE IS YOUR ORDER :  ${NL} ${NL} 
+            TITLE : ${songTitle} ${NL} 
+            YOUR NAME : ${firstName} ${lastName} ${NL}
+            YOUR EMAIL ADDRESS : ${email} ${NL}
+            CREDIT CARD : ${creditCardType} ${NL}
+            AMOUNT CHARGED FROM CARD : $${SONG_PRICE} ${NL} ${NL}
+            THANK YOU FOR PLACING YOUR ORDER !
+
+            `
+        console.log(fulldetail);
+
+    }
+</script>
+</body>
+</html>
