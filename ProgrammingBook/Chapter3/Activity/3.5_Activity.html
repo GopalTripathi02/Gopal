@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+
+    <title>Flower Shop</title>
+</head>
+<body bgColor="orange">
+<h2>Welcome to the Flower Shop</h2>
+<form name="flowerShop" action="">
+
+<!-- Creating Text Boxes For user details-->
+<strong>Enter Your Name  : </strong><p>
+<input type="text" id="name" placeholder="Enter Your Name" > <p>
+
+<!-- Creating Radio Buttons For Opting Flowers-->
+<strong>Choose Flower you wish to buy</strong> <p>
+<input type="radio" name="flower" value="roses" onclick="setFlower(this.value)"> Roses <p>
+<input type="radio" name="flower" value="carnations" onclick="setFlower(this.value)"> Carnations <p>
+<input type="radio" name="flower" value="Daisies" onclick="setFlower(this.value)"> Daisies <p>
+
+<!-- Button and text area for Diplaying information-->
+
+<input type="button" id="displayInfo" onclick="displayInfor()" value="Display Info"><p>
+
+<textarea name="fullInfo" id="info" cols="40" rows="10" readonly="true" >Thanks For buying flowers from our shop!!</textarea>
+</form>
+
+<script>
+    let userName;
+    let flowers;
+    function setFlower(newFlower) {
+        flowers = newFlower;
+        console.log(flowers);
+        
+    }
+
+    function displayInfor() {
+        userName = document.getElementById("name").value;
+        document.getElementById("info").innerHTML = `UserName => ${userName} \nChosen Flower => ${flowers}
+        \nThanks For Shopping !`
+        
+    }
+</script>
+    
+</body>
+</html>

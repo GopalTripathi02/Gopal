@@ -32,14 +32,14 @@
 <!-- Creating text boxes for user details -->
 
 <strong>Enter your Name and e-mail address :</strong> </p>
-<input type="text" class="text" id="firstName" name="firstName" value="First Name" size="40"><p>
-<input type="text" class="text" id="lastName" name="lastName" value="last Name" size="40"><p>
-<input type="text" class="text" id="email" name="email" value="e-mail address" size="40"><p>
+<input type="text" class="text" id="firstName" placeholder="First Name" size="40"><p>
+<input type="text" class="text" id="lastName" placeholder="Last Name" size="40"><p>
+<input type="text" class="text" id="email" placeholder="e-mail" size="40"><p>
 
 <!--Create display button and multiline text-->
 
 <input type="button" onclick="displayOrder()" name="displayButton" value="Display Order" /> </p>
-<textarea name="fullOrder" readonly="true"  id="" cols="50" rows="8"></textarea>
+<textarea name="fullOrder" readonly="true"  id="full" cols="70" rows="14"></textarea>
 
 
 </form>
@@ -62,8 +62,7 @@
         console.log(email);
         let songTitle = document.getElementById("songs").value;
         console.log(songTitle);
-        let fulldetail= document.OrderForm.fullOrder.value = 
-            `HERE IS YOUR ORDER :  ${NL} ${NL} 
+        document.getElementById("full").innerHTML = `HERE IS YOUR ORDER : ${NL}
             TITLE : ${songTitle} ${NL} 
             YOUR NAME : ${firstName} ${lastName} ${NL}
             YOUR EMAIL ADDRESS : ${email} ${NL}
@@ -72,7 +71,7 @@
             THANK YOU FOR PLACING YOUR ORDER !
 
             `
-        console.log(fulldetail);
+        
 
     }
 </script>
