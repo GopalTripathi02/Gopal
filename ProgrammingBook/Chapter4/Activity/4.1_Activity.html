@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+
+    <title>Evaluating Sales</title>
+</head>
+<body>
+    <script>
+        // This program returns the percentage of sale increase 
+
+        let saleInYear10 = parseFloat(prompt("Input sale figures of 2010 :",));
+        let saleInYear11 = parseFloat(prompt("Input sale figures of 2011 :",));
+
+        let diffInSale = (saleInYear11-saleInYear10);
+        let finalSalePerc = (diffInSale/saleInYear11)*100;
+
+        function saleInfo() {
+            document.write(`<strong> Welcome to this Program !! </p>
+            Sale in year 2010 :$${saleInYear10} </br>
+            Sale in year 2011 :$${saleInYear11} </br>
+            Difference in sale :$${diffInSale} </br>
+            The increase/decrease in sale: ${finalSalePerc.toFixed(2)}%</p>
+            Thank You !! </strong> </p>`)
+            
+        }
+
+        saleInfo();
+    </script>
+    
+</body>
+</html>
