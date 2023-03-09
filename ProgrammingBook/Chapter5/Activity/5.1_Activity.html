@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <title>BucketProblem</title>
+  </head>
+  <body>
+    <script>
+      let rainHappening = prompt("Rain happening :", "");
+      
+    if (rainHappening === "YES" || rainHappening === "Y") {
+        console.log("Check the water level ");
+
+        const Min = 10;
+        const Max = 30;
+        let waterLevel = Math.random() * (Min , Max);
+        console.log(waterLevel);
+
+        if (waterLevel >= 20) {
+          console.log("Empty the bucket");
+        } else {
+          console.log("Comeback after 10 mins again");
+        }
+      } 
+    else {
+        console.log("Thank you have a good day!");
+      }
+    </script>
+  </body>
+</html>
