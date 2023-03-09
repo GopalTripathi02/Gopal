@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+
+    <title>BulkisBestOrdering</title>
+</head>
+<body>
+<script>
+    let firstName = prompt(`Enter Your First Name :`,);
+    let lastName = prompt(`Enter Your Last Name :`,);
+
+    let custName = `${firstName} ${lastName}`;
+    
+    let numPkg = parseFloat(prompt(`Enter Num of package you wish to order`));
+    let pkgPrice;
+
+    if(numPkg >= 6){
+        pkgPrice = 2.00;
+    }
+    else{
+        pkgPrice = 2.50;
+    }
+
+
+    let state = prompt(`Enter the state to ship the package :`,);
+    let shipCost;
+
+    if(state===`ID`){
+        shipCost = 0.00;
+    }
+    else{
+        shipCost = 4.00;
+    }
+
+    let totalPkgCost= (pkgPrice * numPkg);
+
+    let totalOrderCost = (totalPkgCost + shipCost);
+
+    let displayInfo = () => {
+        document.write(`<strong> Welcome to Bulk is Best ! </p>
+        Order Summary for : ${custName} </br>
+        Number of Packages Ordered : ${numPkg} </br>
+        Price per Package : $${pkgPrice.toFixed(2)} </br>
+        Subtotal : $${totalPkgCost.toFixed(2)} </br>
+        Order will be shipped at : ${state} </br>
+        Shipping Cost : $${shipCost.toFixed(2)} </br>
+        Order Total : $${totalOrderCost.toFixed(2)} </p>
+        Thank You!! </strong>`);
+    }
+
+    displayInfo();
+</script>  
+</body>
+</html>
