@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NumberAdditionProgram</title>
+  </head>
+  <body>
+    <script>
+      //This is a number addition program
+      //It stops when you chose to quit
+
+      let additionOfTwo = () => {
+
+        document.write(`<strong>Welcome to addition program<p>
+        It repeats until you chose to quit<p> </strong>`)
+        let num1;
+        let num2;
+        let sum;
+        let more;
+        do {
+          num1 = parseInt(prompt(`Enter num 1 :`));
+          num2 = parseInt(prompt(`Enter num 2 :`));
+          sum = num1 + num2;
+          document.write(`Sum of the numbers: ${sum} <p>`);
+          more = prompt(`More numbers to add press Y or -1 to quit ?`);
+        } while (more != -1);
+      };
+      additionOfTwo();
+      document.write(`Thank You!! `)
+    </script>
+  </body>
+</html>
