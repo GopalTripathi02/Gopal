@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+
+    <title>FrozenRainbowPromotion</title>
+</head>
+<body>
+ <script>
+
+    let maxName;
+    
+    let maxTotal = 0;
+    let grandTotal = 0;
+
+    document.write(`<b>Welcome to Frozen Rainbow Promotion Program</b> <p>`)
+    
+    let empName;
+    empName = prompt(`Enter Employee Name (or Q to quit): `,"");
+    let empTotal;
+    
+    let dayIndex;
+    let dailyAmnt;
+    
+    while (empName != "Q"){
+    empTotal = 0;
+        for (dayIndex = 1; dayIndex<= 5; dayIndex++) {
+
+            dailyAmnt = parseInt(prompt(`Enter The Amount For The Day ${dayIndex}: `,));
+            console.log(`The Amount For The Day ${dayIndex}: ${dailyAmnt} <p>`);
+            empTotal += dailyAmnt;
+            
+        }
+
+        document.write(`The Employees Name : ${empName} Total : $${empTotal}<p>`);
+        if (empTotal > maxTotal) {
+            maxTotal = empTotal;
+            maxName = empName;
+        }
+            grandTotal = grandTotal + empTotal;
+
+        empName = prompt(`Enter Employee Name (or Q to quit): `,"");
+
+    }
+
+        document.write(`The Grand Total of Coupon Purchases : $${grandTotal}<p>`);
+        document.write(`The Employees with Highest Amount : ${maxName}<p>`);
+        document.write(`The Highest Total : $${maxTotal}<p>`);
+
+        document.write(`<b>Frozen Rainbow Thanks You !! </b> <p>`)
+
+
+
+ </script>   
+</body>
+</html>

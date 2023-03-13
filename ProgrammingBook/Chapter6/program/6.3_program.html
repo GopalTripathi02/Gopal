@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <title>Canned Food Drive</title>
+  </head>
+  <body>
+    <script>
+      // Purpose of this program is to use a loop to accumulate donations
+
+      document.write(`<strong>Welcome To This Program !!</strong><p>`);
+      let numOfCans = parseInt(
+        prompt(`Enter Number of cans (or -1 to quit) :`)
+      );
+      let totalCans = 0;
+      while (numOfCans != -1) {
+        totalCans += numOfCans;
+        document.write(`Total cans so far : ${totalCans}<p>`);
+        numOfCans = parseInt(prompt(`Enter Number of cans (or -1 to quit) :`));
+      }
+
+      document.write(`Total cans Donated so far : ${totalCans}<p>`);
+      document.write(`<strong>Thank you for using this Program !!</strong>`);
+    </script>
+  </body>
+</html>

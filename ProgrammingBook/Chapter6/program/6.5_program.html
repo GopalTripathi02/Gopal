@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <title>QuickTunesCustomerClass</title>
+  </head>
+  <body>
+    <script>
+      // Creating class for quicktunes customer
+
+      class QuickTunesCustomer {
+        constructor(lName, fName, addr, city, state, zip) {
+          (this.customerNumber = newCustNum),
+            (this.custLastName = lName),
+            (this.custFirstName = fName),
+            (this.custName = `${fName} ${lName}`),
+            (this.custStreetAddress = addr),
+            (this.custCity = city),
+            (this.custState = state),
+            (this.custZip = zip);
+        }
+
+        displayInfo() {
+          document.write(`<b>Welcome To this Program</b><p>
+            Customer Number : ${this.customerNumber} <p>
+            Customer Name : ${this.custName} <p>
+            Customer Address : ${this.custStreetAddress} <p> 
+            Customer City , State and Zip : ${this.custCity} ${this.custState} ${this.custZip} <p>
+            <b>Thank You !!</b><p>`);
+        }
+      }
+
+      let firstName;
+      let lastName;
+      let address;
+      let city;
+      let state;
+      let zip;
+      let newCustNum;
+
+      document.write(`<b>Quicktunes New Customer program</b><p>`);
+
+      newCustNum = parseInt(prompt(`Input First customer num : `));
+
+      lastName = prompt(`Input Last name (or Q to quit)`);
+      let numNewCusts = 0;
+
+      while (lastName != "Q") {
+        numNewCusts++;
+        firstName = prompt(`Input Customers First Name: `);
+        address = prompt(`Input Customers Address: `);
+        city = prompt(`Input Customers city: `);
+        state = prompt(`Input Customers state: `);
+        zip = prompt(`Input Customers zip: `);
+
+        let newCustomer = new QuickTunesCustomer(
+          lastName,
+          firstName,
+          address,
+          city,
+          state,
+          zip,
+          newCustNum
+        );
+        
+        newCustomer.displayInfo();
+        newCustNum++;
+        lastName = prompt(`Input Last name (or Q to quit)`);
+      }
+      document.write(`<b>New Customer Added : ${numNewCusts}</b><p>`);
+    </script>
+  </body>
+</html>
