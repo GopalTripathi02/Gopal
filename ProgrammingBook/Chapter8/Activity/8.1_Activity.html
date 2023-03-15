@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+       document.write(`<strong>Welcome To This Program <p>`);
+
+      function calculatorNum(num1, num2) {
+        let sumOfAll = (`Addition : ${num1 + num2} <br>
+        Substraction : ${num1 - num2} <br>
+        Multiplication : ${num1 * num2} <br>
+        Division : ${num1 / num2} <br>
+        Modulus : ${num1 % num2} <br>`)
+
+        return sumOfAll;
+      }
+
+      let num1 = parseFloat(prompt(`Input number 1:`));
+      let num2 = parseFloat(prompt(`Input number 2 :`));
+      
+      let result = calculatorNum(num1,num2);
+
+      document.write(`HERE IS YOUR CALCULATIONS : <p> ${result}`);
+
+      document.write(`THANK YOU !! <p>`);
+        
+    
+
+    </script>
+  </body>
+</html>
