@@ -1,11 +1,141 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
-<body>
+<body Bgcolor="skyblue">
+    <h2>ITS YOUR MONEY SLOTS</h2>
+    <form name="Slotform" action="">
+
+    <input type="text" placeholder="BOX1" id="b1" value="" size="10">
+    <input type="text" placeholder="BOX2" id="b2" value="" size="10">
+    <input type="text" placeholder="BOX3" id="b3" value="" size="10"> </p>
+
+    <input type="button" name="play" value="Play Slots" id="button" /> </p>
+
+    <input type="text" placeholder="Result" id="result" value="" size="24">
+
+
+
+
+</form>
+  <script>
+
+    // Box Numbers 
+    let random1,random2,random3; 
+
+    // Text constants for boxes 
+
+    const TEXT_CHERRY = `CHERRY`;
+    const TEXT_LEMON = `LEMON`;
+    const TEXT_LIME = `LIME`;
+    const TEXT_ORANGE = `ORANGE`;
+    const TEXT_BANANA = `BANANA `;
+
+    // Text constants for Results
+
+    const RES_JACKPOT = `3 OF A KIND JACKPOT!!`;
+    const RES_2KIND = `2 OF A KIND !!`;
+    const RES_NOPRIZE = `NO PRIZE !!`;
+
+
+    function playSlots() {
+        random1 = Math.floor(Math.random()*5)+1;
+        console.log(random1);
+
+        switch (random1) {
+            case 1:
+                document.Slotform.b1.value = TEXT_CHERRY
+                break;
+            case 2:
+                document.Slotform.b1.value = TEXT_LEMON
+                break;
+        
+            case 3:
+                document.Slotform.b1.value = TEXT_LIME
+                break;
+        
+            case 4:
+                document.Slotform.b1.value = TEXT_BANANA
+                break;
+        
+            case 5:
+                document.Slotform.b1.value = TEXT_ORANGE
+                break;
+        
+
+        }
+
+        random2 = Math.floor(Math.random()*5)+1;
+        console.log(random2);
+
+        switch (random2) {
+            case 1:
+                document.Slotform.b2.value = TEXT_CHERRY
+                break;
+            case 2:
+                document.Slotform.b2.value = TEXT_LEMON
+                break;
+        
+            case 3:
+                document.Slotform.b2.value = TEXT_LIME
+                break;
+        
+            case 4:
+                document.Slotform.b2.value = TEXT_BANANA
+                break;
+        
+            case 5:
+                document.Slotform.b2.value = TEXT_ORANGE
+                break;
+        
+
+        }
+
+        random3 = Math.floor(Math.random()*5)+1;
+        console.log(random3);
+
+        switch (random3) {
+            case 1:
+                document.Slotform.b3.value = TEXT_CHERRY
+                break;
+            case 2:
+                document.Slotform.b3.value = TEXT_LEMON
+                break;
+        
+            case 3:
+                document.Slotform.b3.value = TEXT_LIME
+                break;
+        
+            case 4:
+                document.Slotform.b3.value = TEXT_BANANA
+                break;
+        
+            case 5:
+                document.Slotform.b3.value = TEXT_ORANGE
+                break;
+        
+
+        }
+
+    if(random1 === random2 && random1 === random3){
+        document.getElementById(`result`).value = RES_JACKPOT;
+    }
+
+    else if(random1 === random2 || random1 === random3 || random2 === random3){
+        document.getElementById(`result`).value = RES_2KIND;
+
+    } else{
+        document.getElementById(`result`).value = RES_NOPRIZE;
+    }
+    }
     
+    let playButton = document.getElementById("button")
+    playButton.addEventListener(`click`,playSlots);
+
+
+    
+
+  </script>  
 </body>
 </html>
