@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+
+    <title>QuiteFreeThrows</title>
+</head>
+<body>
+ <script>
+    let numDiscs,numBoom,shipCost;
+    const DISK_PRICE = 4.98;
+    const BOOM_PRICE = 3.98;
+    const SHIP_PRICE = 5.00;
+
+    document.write(`<strong>Welcome To Program <p>`)
+
+    numDiscs = parseFloat(prompt(`Enter Number Of Disk :`,));
+    numBoom = parseFloat(prompt(`Enter Number Of Boomrang :`,));
+
+    if(numDiscs >=1 && numBoom>=1 || numDiscs >=3 || numBoom >=3) {
+        shipCost= 0;
+        document.write(`Congratulations! Shipping is Free !!<p>`)
+    }
+    else{
+        shipCost = SHIP_PRICE;
+    }
+
+    let totalPurc = (numDiscs*DISK_PRICE)+(numBoom*BOOM_PRICE);
+
+    document.write(`Total Purchase Amount : $${totalPurc.toFixed(2)}<p>`);
+
+    let totalOrder = (totalPurc + shipCost);
+
+    document.write(`Shipping Cost : $${shipCost}<p>`);
+
+    document.write(`Total Order Amount : $${totalOrder.toFixed(2)}<p>`);
+    
+    document.write(`ThankYou For Shopping Here ! <p>`);
+
+ </script>   
+</body>
+</html>

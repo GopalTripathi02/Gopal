@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <title>StudentAdmission</title>
+  </head>
+  <body>
+    <script>
+      document.write(`<strong>Welcome to this Program <p>`);
+
+      let parent, scoreSAT, familyInc;
+
+      parent = prompt(`If Your Father is Alumnus(Tap Y or N)?`, "");
+      scoreSAT = prompt(`Enter Your SAT Score :`,);
+      familyInc = prompt(`Input Your Family's Income :`,);
+
+      if (
+        scoreSAT >= 1400 ||
+        (scoreSAT >= 1200 && parent == `Y`) ||
+        (scoreSAT >= 1200 && familyInc == `100000`)
+      ) {
+        document.write(`STUDENT IS ACCEPTED <p>`);
+        if (familyInc < 100000) {
+          document.write(`STUDENT IS ELIGIBLE FOR SCHOLARSHIP <p>`);
+        }
+      } else {
+        document.write(`TRY AGAIN NEXT YEAR <p>`);
+      }
+
+      document.write(`Thank You !!  <p>`);
+    </script>
+  </body>
+</html>
