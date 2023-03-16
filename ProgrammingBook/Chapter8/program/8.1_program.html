@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+
+    <title>DisplayStars</title>
+</head>
+<body>
+<script>
+    function displayStars() {
+        let num,index;
+
+        document.write(`<p>`)
+        num = prompt(`How many Asterisks in this row`,);
+
+        for(index = 1 ; index <= num ; index++) {
+            document.write(`*`)
+        }
+    }
+    let index;
+    let num = prompt(`How Many Rows You Want :`,);
+
+    for(index = 1; index <= num; index++){
+        displayStars();
+    }
+
+    document.write(`<p>Thank You !!`);
+
+
+</script>   
+</body>
+</html>
