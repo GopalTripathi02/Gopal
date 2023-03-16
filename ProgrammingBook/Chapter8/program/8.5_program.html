@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+
+    <title>Number_Guesser</title>
+</head>
+<body>
+<script>
+    let winningNum,userGuess,index;
+    let correct = false;
+    winningNum = Math.floor(Math.random()*10)+1;
+    console.log(winningNum);
+    
+    function compareNums(guess,num) {
+        if(guess===num){
+            result = true;
+        }else{
+            result = false;
+            if(guess < num){
+                document.write(`Your guess was low <p>`);
+
+            }
+            else{
+                document.write(`Your guess was High <p>`);
+            }
+        }
+        return result;
+    }
+
+    index = 1
+    while (index <= 3) {
+        userGuess = parseInt(prompt(`Enter Your Guess ${index}`,));
+        correct = compareNums(userGuess,winningNum);
+        index += 1
+
+   }
+
+   reportWinner = (user) => {
+    if(user) {
+        document.write(`Congratulations You won <p>`);
+    } else {
+        document.write(`Better Luck Next time <p>`);
+    }
+   }
+
+   document.write(`The Winning Number was ${winningNum} <p>`);
+   reportWinner(correct);
+
+   document.write(`Thank You !!`)
+
+
+
+</script>    
+</body>
+</html>
