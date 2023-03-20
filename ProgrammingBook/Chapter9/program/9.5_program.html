@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #form-container{
+            background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            padding: 50px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        
+        #display{
+            width: 150px;
+
+            border: 22px;
+            color: black;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h2><u>Sounds Right Customer inquiry</u></h2>
+        <form action="" onsubmit="return validateForm()">
+        <p>Enter Your Name, Address, and Email</p>
+        First Name: <input type="text" placeholder="First Name" value="" id="firstName"><p>
+        Last Name: <input type="text" placeholder="last Name" value="" id="lastName"><p>
+        Street Address: <input type="text" placeholder="Address" value="" id="address"><p>
+        City: <input type="text" placeholder="city" value="" id="city"><br>
+        State: <input type="text" placeholder="state" value="" id="state"><br>
+        zip: <input type="text" placeholder="zip" value="" id="zip"><p>
+        E-mail: <input type="text" placeholder="e-mail" value="" id="email"><p>
+        <input type="button" value="displayInfo" id="display"><p>
+        <textarea name="info" id="info" cols="40" rows="15" required></textarea>
+
+
+    </form>
+    </div>
+
+    <script>
+        function displayInfo(){
+
+        let firstName,lastName,address,city,state,zip,email,errMsg;
+        firstName = document.getElementById(`firstName`).value;
+        lastName = document.getElementById(`lastName`).value;
+        address = document.getElementById(`address`).value;
+        city = document.getElementById(`city`).value;
+        state = document.getElementById(`state`).value;
+        zip = document.getElementById(`zip`).value;
+        email = document.getElementById(`email`).value;
+        errMsg = '';
+
+        if(firstName.length <= 0){
+            errMsg += `First Name required`;
+        } else if(lastName.length <=0){
+            errMsg += `last Name required `;
+        } else if(address.length <= 0){
+            errMsg += `Address required `;
+        } else if(city.length <= 0){
+            errMsg += `city name`;
+        }else if(state.length != 2){
+            errMsg += `State code must contain Two letters `;
+        }else if(zip.length != 6){
+            errMsg += `Zip length should be six `;
+        }else if(email.indexOf(`@`) <= 0 && email.indexOf(`.`) <= 0){
+            errMsg += `invalid email address `;
+        }
+
+        if(errMsg.length > 0){
+            document.getElementById(`info`).innerHTML = errMsg;
+        }else{
+            document.getElementById(`info`).innerHTML = 
+        `Here is Your Information:
+
+        Your Name : ${firstName} ${lastName} 
+        Address : ${address} ${city} ${state} ${zip}
+        E-mail : ${email}
+        Thank You !`
+        }
+        }
+
+
+        let btn = document.getElementById(`display`);
+        btn.addEventListener(`click`,displayInfo);
+
+    </script>
+</body>
+</html>

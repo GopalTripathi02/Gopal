@@ -13,7 +13,7 @@
         try {
             num1 = prompt(`input number btwn 1 to 100 :`,);
             if(num1 < 1 ){
-                throw "out of range Low";
+                throw "out of range low";
             } else if(num1 > 100){
                 throw "out of range high";
             }else{
@@ -22,15 +22,22 @@
             
         } catch (error) {
             if(error== "out of range low"){
-                document.write(`The entred number is too low`);
+                document.write(`The entred number is too low<p>`);
             }else if(error== "out of range high"){
-                document.write(`The entred number is too high`);
+                document.write(`The entred number is too high<p>`);
+            }else{
+                document.write(`Number is in range <p>`);
             }
         }
     }
 
     let more = "Y";
-    
+    while(more.toUpperCase() == "Y"){
+        rangeException();
+        more = prompt(`Test Another Number ?`,);
+    }
+
+    document.write(`Thank You !!`);
 </script>    
 </body>
 </html>
