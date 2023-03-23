@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp</title>
+  </head>
+  <body>
+    <script>
+      const WEEKS = 2;
+      const DAYS = 7;
+
+      let dayIndex;
+      let weekIndex;
+
+      let temp = [[], []];
+
+      for (weekIndex = 0; weekIndex < WEEKS; weekIndex++) {
+        for (dayIndex = 0; dayIndex < DAYS; dayIndex++) {
+          const value = prompt(
+            `Enter the Temperature for week ${weekIndex + 1} day ${
+              dayIndex + 1
+            }`
+          );
+          temp[weekIndex][dayIndex] = value;
+          console.log(temp[weekIndex][dayIndex]);
+        }
+      }
+
+      for (weekIndex = 0; weekIndex < WEEKS; weekIndex++) {
+        document.write(`Temperature for week : ${weekIndex + 1} <p>`);
+        for (dayIndex = 0; dayIndex < DAYS; dayIndex++) {
+          document.write(
+            `DAY ${dayIndex + 1} : ${temp[weekIndex][dayIndex]} <br>`
+          );
+        }
+      }
+      document.write(`Thank You !! `);
+    </script>
+  </body>
+</html>

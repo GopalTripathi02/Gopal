@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const SIZE = 5000000;
+        let index;
+        let numberArray = new Array(SIZE);
+
+        for(index = 0; index < SIZE ; index++){
+            numberArray[index] = index + 1;
+        };
+
+
+        // Sequential Search
+
+
+        let searchNumber = parseFloat(prompt(`Input number to search`,));
+        let comparision = 0;
+        let found = false;
+        let d1,d2;
+        d1 = new Date()
+        index=0;
+
+        for(index =0; index < SIZE; index++){
+            comparision+=1;
+            d2 = new Date()
+            if(numberArray[index]===searchNumber){
+                found = true;
+                break;
+            }
+        }
+
+        if(found===true){
+
+        document.write(`The Match Found at index ${index} and total number of comparisons ${comparision}<p>`)
+        }
+
+        let difference = (d2-d1);
+        console.log(d1);
+        console.log(d2);
+        console.log(difference);
+        document.write(`Sequential Search Milliseconds taken : ${difference} <p>`)
+
+        // Binary Search
+
+        found = false;
+        let low =0;
+        let high = SIZE;
+        comparision = 0;
+
+
+        index = 0;
+
+        while(low <= high && (!found)){
+            comparision+=1;
+            d1 = new Date()
+            index = Math.floor((high+low)/2);
+            if(numberArray[index]===searchNumber){
+                found = true;
+                d2 = new Date()
+            }else{
+                if(numberArray[index] > searchNumber){
+                    high = index - 1;
+                }else{
+                    low = index + 1;
+                }
+            }
+        };
+
+
+        if(found===true){
+
+            document.write(`The Match Found at index ${index} and total number of comparisons ${comparision} <p>`)
+        };
+
+        difference = (d2-d1);
+        console.log(d1);
+        console.log(d2);
+        console.log(difference);
+        document.write(`Binary Search Milliseconds taken : ${difference} <p>`)
+
+    </script>
+</body>
+</html>
