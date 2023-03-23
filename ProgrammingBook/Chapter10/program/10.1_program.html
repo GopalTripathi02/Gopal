@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booktitles</title>
+</head>
+<body>
+    <script>
+        const SIZE = 5;
+        let bookTitles;
+        let index;
+        bookTitles = new Array(SIZE);
+        console.log(bookTitles);
+
+        for(index = 0; index <= SIZE-1; index++){
+            bookTitles[index]= prompt(`Input Book Title for Number ${index+1} `,);
+
+        };
+
+        console.log(bookTitles);
+
+        document.write(`<strong>Book Titles Entered : <p>`);
+            for(index = 0; index < SIZE; index++){
+                document.write(`${bookTitles[index]} <br>`);
+            }
+
+        document.write(`Thank You !!`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight-Booking</title>
+    <style>
+      body {
+        background-image: linear-gradient(to right top, #0c0e11, #090e10, #080d0d, #090c0a, #0b0b07);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #form-container {
+        background-image: linear-gradient(
+          to right top,
+          #d16ba5,
+          #c777b9,
+          #ba83ca,
+          #aa8fd8,
+          #9a9ae1,
+          #8aa7ec,
+          #79b3f4,
+          #69bff8,
+          #52cffe,
+          #41dfff,
+          #46eefa,
+          #5ffbf1
+        );
+        padding: 50px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-container">
+      <h2><u>Flight-Booking</u></h2>
+      <h4>Enter Source And Destination :</h4>
+      <select name="flight-source" id="source">
+        <option value="ahmedabad">Ahmedabad(AMD)</option>
+        <option value="lucknow">Lucknow(LKO)</option>
+        <option value="jabalpur">Jabalpur(JBP)</option>
+        <option value="prayagraj">Prayagraj(PRY)</option>
+        <option value="kanpur">Kanpur(KPY)</option>
+      </select>
+      <p></p>
+
+      <select name="flight-destination" id="destination">
+        <option value="ahmedabad">Ahmedabad(AMD)</option>
+        <option value="lucknow">Lucknow(LKO)</option>
+        <option value="jabalpur">Jabalpur(JBP)</option>
+        <option value="prayagraj">Prayagraj(PRY)</option>
+        <option value="kanpur">Kanpur(KPY)</option>
+      </select>
+      <p></p>
+
+      <input type="button" value="Find Flight" id="button" />
+      <p></p>
+
+      <textarea
+        name="flightinfo"
+        id="flightinfo"
+        cols="40"
+        rows="20"
+      ></textarea>
+    </div>
+    <script>
+      const SIZE = 20;
+      let source = [
+        "ahmedabad",
+        "ahmedabad",
+        "ahmedabad",
+        "ahmedabad",
+        "lucknow",
+        "lucknow",
+        "lucknow",
+        "jabalpur",
+        "jabalpur",
+        "jabalpur",
+        "jabalpur",
+        "lucknow",
+        "prayagraj",
+        "prayagraj",
+        "prayagraj",
+        "prayagraj",
+        "kanpur",
+        "kanpur",
+        "kanpur",
+        "kanpur",
+      ];
+
+      let destination = [
+        "kanpur",
+        "prayagraj",
+        "lucknow",
+        "jabalpur",
+        "ahmedabad",
+        "ahmedabad",
+        "lucknow",
+        "jabalpur",
+        "prayagraj",
+        "kanpur",
+        "ahmedabad",
+        "lucknow",
+        "jabalpur",
+        "prayagraj",
+        "kanpur",
+        "ahmedabad",
+        "lucknow",
+        "jabalpur",
+        "prayagraj",
+        "kanpur",
+      ];
+
+      let flightNumber = [
+        "RE103",
+        "RE105",
+        "RE107",
+        "RE109",
+        "RE305",
+        "RE307",
+        "RE309",
+        "RE301",
+        "RE507",
+        "RE509",
+        "RE501",
+        "RE503",
+        "RE709",
+        "RE701",
+        "RE703",
+        "RE705",
+        "RE901",
+        "RE903",
+        "RE905",
+        "RE907",
+      ];
+
+      let price = [
+        110.0, 100.0, 90.0, 80.0, 75, 90, 110, 120, 65, 80, 120, 75, 65, 90, 90,
+        65, 80, 110, 80, 65,
+      ];
+
+      let fromCity, toCity, index;
+
+      function searchArray() {
+        document.getElementById(
+          `flightinfo`
+        ).innerHTML = `Welcome to REDEYE AIRLINES \nALL FLIGHTS LEAVE AT 2:00 AM \n \n`;
+
+        fromCity = document.getElementById(`source`).value;
+        toCity = document.getElementById(`destination`).value;
+
+        if (fromCity === toCity) {
+          document.getElementById(
+            `flightinfo`
+          ).innerHTML += `Starting and Ending destination cant be same.\n`;
+        } else {
+          for (index = 0; index < SIZE; index++) {
+            if (source[index] == fromCity && destination[index] == toCity) {
+              document.getElementById(`flightinfo`).innerHTML += 
+              `Flight from ${source[index]} to ${destination[index]} \nFlight number : ${flightNumber[index]}\n\nPrice per person : ${price[index].toFixed(2)} \n\n `;
+            }
+          }
+        }
+      }
+
+      let btn = document.getElementById(`button`);
+      btn.addEventListener(`click`, searchArray);
+    </script>
+  </body>
+</html>

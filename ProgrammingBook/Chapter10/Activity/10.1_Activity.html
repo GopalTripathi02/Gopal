@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const SIZE = 5;
+        let cities;
+        cities = new Array(SIZE)
+        let index ;
+
+        for(index = 0 ; index < SIZE ; index++){
+            cities[index] = prompt(`Enter City Number ${index+1}`,);
+
+        }
+        console.log(cities);
+
+        document.write(`<strong>You Have Entered Cities : <p>`);
+            for(index = 0; index < SIZE ; index++){
+                document.write(`${cities[index]} <p>`);
+            }
+
+        document.write(`Thank you `)
+    </script>
+</body>
+</html>
