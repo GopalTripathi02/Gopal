@@ -6,10 +6,12 @@
     <title>CharacterBasedRectangleWithSpace</title>
   </head>
   <body>
+    <font face="Courier New">
     <script>
       let char = prompt(`Input any keyboard character`,);
       let rows = +prompt(`Input Number of Rows`,);
       let columns = +prompt(`Input Number of Columns`,);
+      let BL = `&nbsp;`;
       let str = "";
 
       for(let i =0; i < rows; i++){
@@ -20,7 +22,7 @@
                 if((j===0) || (j===columns-1)){
                     str+= `${char}`;
                 }else{
-                    str += " ".repeat(3) ;
+                    str += BL ;
                 }
             }
         }
@@ -28,5 +30,6 @@
       }
       document.write(str);
     </script>
+    </font>
   </body>
 </html>

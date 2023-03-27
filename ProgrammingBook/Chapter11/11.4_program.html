@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailing List Form</title>
+    <style>
+        #record{
+
+            width: 40px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hi-Tech Investments Mailing List Form</h2>
+    <div class="form-container">
+        <strong>Last Name: <br></strong><input type="text" id="lastName" placeholder="Last Name"><p>
+        <strong>First Name: <br></strong><input type="text" id="firstName" placeholder="First Name"><p>
+        <strong>City: <br></strong><input type="text" id="city" placeholder="City"><p>
+        <strong>State: <br></strong><input type="text"  id="state" placeholder="State"><p>
+        <input type="submit" value="Submit" id="submit"><p>
+        <textarea name="displayinfo" id="info" cols="30" rows="10"></textarea><p>
+        <strong>Record :</strong>  <input type="text" name="" id="record"> 
+        <input type="button" value="Go To" id="goto"> <p>
+            <input type="button" value="First" id="first">
+            <input type="button" value="Previous" id="previous">
+            <input type="button" value="Next" id="next">
+            <input type="button" value="Last" id="last"><p>
+            <strong>Current Record :</strong><input type="text" name="message" readonly="readonly" size="3" id="current">
+            
+    </div>
+
+    <script>
+        let lastName,firstName,city,state;
+        
+        lastName = document.getElementById(`lastName`);
+        firstName = document.getElementById(`firstName`);
+        city = document.getElementById(`city`);
+        state = document.getElementById(`state`);
+        let currentRecord = document.getElementById(`current`);
+        let count = 0;
+        let mainArray = [];
+
+        // let userDetails = {
+        //     lastName,
+        //     firstName,
+        //     city,
+        //     state
+        // };
+
+        // mainArray.push(userDetails);
+
+
+
+        function displayinfo(){
+        // let lastName,firstName,city,state;
+        
+        // lastName = document.getElementById(`lastName`).value;
+        // firstName = document.getElementById(`firstName`).value;
+        // city = document.getElementById(`city`).value;
+        // state = document.getElementById(`state`).value;
+
+
+        let userDetails = {
+            lastName:lastName.value,
+            firstName:firstName.value,
+            city:city.value,
+            state:state.value,
+        };
+
+        mainArray.push(userDetails);
+        count = mainArray.length-1;
+        currentRecord.value = (count+1); 
+        console.log(userDetails);
+
+
+
+
+        // let num = 0;
+
+        for (let obj of mainArray) {
+            // num+=1
+            document.getElementById(`info`).innerHTML = `\nLast Name :${lastName.value} \nFirst Name :${firstName.value} \nCity :${city.value}\nState : ${state.value}`
+            };
+
+            // if(num>1){
+            // document.getElementById("info").innerHTML = "";
+            // };
+            console.log(mainArray);
+            console.log(count);
+            
+        };
+
+        // Submit Button
+
+        let submit = document.getElementById(`submit`);
+        submit.addEventListener(`click`,displayinfo);
+
+        let firstBtn,previousBtn,nextBtn,lastBtn;
+
+        firstBtn = document.getElementById(`first`);
+        firstBtn.addEventListener(`click`,function(){
+            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[0].lastName} \nFirst Name :${mainArray[0].firstName} \nCity : ${mainArray[0].city} \nState :${mainArray[0].state}`;
+            console.log(mainArray[0]);
+        })
+
+        // Go to Button
+
+        let goto = document.getElementById(`goto`);
+        goto.addEventListener(`click`,function(){
+            let num = document.getElementById(`record`).value;
+            console.log(num);
+            // document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[num-1].lastName} \nFirst Name :${mainArray[num-1].firstName} \nCity : ${mainArray[num-1].city} \nState :${mainArray[num-1].state}`;
+            if(!mainArray[num-1]){
+                alert(`Running out of Data`);
+            }else{
+                document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[num-1].lastName} \nFirst Name :${mainArray[num-1].firstName} \nCity : ${mainArray[num-1].city} \nState :${mainArray[num-1].state}`;
+            }
+        });
+
+        let last = document.getElementById(`last`);
+        last.addEventListener(`click`,function(){
+            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[mainArray.length-1].lastName} \nFirst Name :${mainArray[mainArray.length-1].firstName} \nCity : ${mainArray[mainArray.length-1].city} \nState :${mainArray[mainArray.length-1].state}`;
+            
+        });
+
+        let previous = document.getElementById(`previous`);
+        previous.addEventListener(`click`,function(){
+            console.log(count);
+            if(count===0){
+                alert(`No data left`)
+            }else{
+            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count-1].lastName} \nFirst Name :${mainArray[count-1].firstName} \nCity : ${mainArray[count-1].city} \nState :${mainArray[count-1].state}`;}
+            count--;
+
+
+        });
+        
+        let next = document.getElementById(`next`);
+        next.addEventListener(`click`,function(){
+            console.log(count);
+            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count+1].lastName} \nFirst Name :${mainArray[count+1].firstName} \nCity : ${mainArray[count+1].city} \nState :${mainArray[count+1].state}`;
+            count++;
+        });
+
+
+
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>
