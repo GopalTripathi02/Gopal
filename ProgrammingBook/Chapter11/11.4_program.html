@@ -27,7 +27,7 @@
             <input type="button" value="Previous" id="previous">
             <input type="button" value="Next" id="next">
             <input type="button" value="Last" id="last"><p>
-            <strong>Current Record :</strong><input type="text" name="message" readonly="readonly" size="3" id="current">
+            <strong>Total Record :</strong><input type="text" name="message" readonly="readonly" size="3" id="current">
             
     </div>
 
@@ -77,16 +77,13 @@
 
 
 
-        // let num = 0;
+
 
         for (let obj of mainArray) {
-            // num+=1
+
             document.getElementById(`info`).innerHTML = `\nLast Name :${lastName.value} \nFirst Name :${firstName.value} \nCity :${city.value}\nState : ${state.value}`
             };
 
-            // if(num>1){
-            // document.getElementById("info").innerHTML = "";
-            // };
             console.log(mainArray);
             console.log(count);
             
@@ -127,33 +124,37 @@
 
         let previous = document.getElementById(`previous`);
         previous.addEventListener(`click`,function(){
-            console.log(count);
-            if(count===0){
-                alert(`No data left`)
+            
+            if(count>0){
+                document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count-1].lastName} \nFirst Name :${mainArray[count-1].firstName} \nCity : ${mainArray[count-1].city} \nState :${mainArray[count-1].state}`;
+                count--;
+                console.log(count);
             }else{
-            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count-1].lastName} \nFirst Name :${mainArray[count-1].firstName} \nCity : ${mainArray[count-1].city} \nState :${mainArray[count-1].state}`;}
-            count--;
+                alert(`No data left`);
+            }
+            
 
 
         });
         
         let next = document.getElementById(`next`);
         next.addEventListener(`click`,function(){
-            console.log(count);
-            document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count+1].lastName} \nFirst Name :${mainArray[count+1].firstName} \nCity : ${mainArray[count+1].city} \nState :${mainArray[count+1].state}`;
+
             count++;
+            
+            if(count>mainArray.length-1){
+                alert(`No data left`);
+                return;
+            }
+            else{
+                document.getElementById(`info`).innerHTML = `\nLast Name :${mainArray[count].lastName} \nFirst Name :${mainArray[count].firstName} \nCity : ${mainArray[count].city} \nState :${mainArray[count].state}`;
+                console.log(count);
+                console.log(currentRecord.value);
+            }
+
+
         });
-
-
-
-
-
         
-
-
-
-
-
 
     </script>
 </body>
